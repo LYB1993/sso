@@ -1,0 +1,65 @@
+{
+  "properties": [
+    {
+      "name": "spring.sso-server.sso-server",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.oliver.configure.SsoServerProperties",
+      "description": "is sso server.",
+      "defaultValue": false
+    },
+    {
+      "name": "spring.sso-server.redis-lease-time",
+      "type": "java.lang.Long",
+      "sourceType": "com.oliver.configure.SsoServerProperties",
+      "description": "redis lease time.",
+      "defaultValue": 30
+    },
+    {
+      "name": "spring.sso-server.redis-time-unit",
+      "type": "java.util.concurrent.TimeUnit",
+      "sourceType": "com.oliver.configure.SsoServerProperties",
+      "description": "redis lease time unit.",
+      "defaultValue": "minutes"
+    },
+    {
+      "name": "spring.sso-server.cookie-lease-time",
+      "type": "java.lang.Long",
+      "sourceType": "com.oliver.configure.SsoServerProperties",
+      "description": "cookie lease time."
+    },
+    {
+      "name": "spring.sso-server.cookie-time-unit",
+      "type": "java.util.concurrent.TimeUnit",
+      "sourceType": "com.oliver.configure.SsoServerProperties",
+      "description": "cookie lease time unit.",
+      "defaultValue": "minutes"
+    },
+    {
+      "name": "spring.sso.sso-url",
+      "type": "java.lang.String",
+      "sourceType": "com.oliver.configure.SsoProperties",
+      "description": "sso url."
+    },
+    {
+      "name": "spring.sso.exclude-path",
+      "type": "java.util.ArrayList",
+      "sourceType": "com.oliver.configure.SsoProperties",
+      "description": "exclude path.",
+      "defaultValue": "[]"
+    },
+    {
+      "name": "spring.sso.host-name",
+      "type": "java.lang.String",
+      "sourceType": "com.oliver.configure.SsoProperties",
+      "defaultValue": "localhost",
+      "description": "host name."
+    },
+    {
+      "name": "spring.sso.host-address",
+      "type": "java.lang.String",
+      "sourceType": "com.oliver.configure.SsoProperties",
+      "defaultValue": "127.0.0.1",
+      "description": "host address."
+    }
+  ]
+}

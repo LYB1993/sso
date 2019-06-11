@@ -1,0 +1,25 @@
+server:
+  port: 8099
+  servlet:
+    context-path: /sso
+spring:
+  profiles:
+    active: dev
+  output:
+    ansi:
+      enabled: always
+  mvc:
+    view:
+      prefix: /
+      suffix: .html
+  redis:
+      host: 192.168.20.196
+      database: 0
+  sso-server:
+    sso-server: true
+    redis-lease-time: 10
+    redis-time-unit: minutes
+    cookie-lease-time: 5
+logging:
+  level:
+    com.oliver: debug

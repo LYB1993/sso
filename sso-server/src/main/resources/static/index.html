@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>首页面</title>
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div id="app">
+    <section>
+        <p>{{ message }}</p>
+        <div class="col-lg-12 mx-auto">
+            <section class="panel">
+                <header class="panel-heading tab-bg-info">
+                    <a class="logo" href="#">主页</a>
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#one-project">个人项目</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#all-project">所有项目</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#add-project">添加项目</a>
+                        </li>
+                    </ul>
+                </header>
+                <div class="panel-body">
+                    <div class="tab-content">
+                        <div id="one-project" class="tab-pane active">
+                            <div class="profile-activity">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">HostName</th>
+                                        <th scope="col">IP+PORT</th>
+                                        <th scope="col">Start</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr v-for="(client,i) in clientList ">
+                                        <th scope="row">{{i+1}}</th>
+                                        <td>{{client.hostname}}</td>
+                                        <td>{{client.ipAddress}}:{{client.port}}</td>
+                                        <td>
+                                            <div v-if="client.usAble===true" class="btn-success">可用</div>
+                                            <div v-else class="btn-danger">不可用</div>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div id="all-project" class="tab-pane">
+                            <section class="panel">
+                            </section>
+                        </div>
+                        <div id="add-project" class="tab-pane">
+                            <section class="panel">
+                                <div class="panel-body">
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+</div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="js/vue.min.js"></script>
+<script src="https://cdn.bootcss.com/vue-resource/1.5.1/vue-resource.min.js"></script>
+<script src="js/index.js"></script>
+<script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</html>
