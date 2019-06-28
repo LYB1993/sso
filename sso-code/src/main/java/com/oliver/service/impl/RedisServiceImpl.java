@@ -57,7 +57,6 @@ public class RedisServiceImpl implements IRedisService {
                 return (T) SsoUtils.deserialization(bytes);
             } catch (Exception e) {
                 LOGGER.error("redis get value is failure,key:{}", key);
-                e.printStackTrace();
             }
         }
         return null;
@@ -69,7 +68,6 @@ public class RedisServiceImpl implements IRedisService {
             return jedis.del(key.getBytes(StandardCharsets.UTF_8)) != 0;
         } catch (Exception e) {
             LOGGER.error("redis get value is failure,key:{}", key);
-            e.printStackTrace();
         }
         return false;
     }
@@ -80,7 +78,6 @@ public class RedisServiceImpl implements IRedisService {
             return jedis.sadd(key, values) != 0;
         } catch (Exception e) {
             LOGGER.error("redis get value is failure,key:{}", key);
-            e.printStackTrace();
         }
         return false;
     }
@@ -91,7 +88,6 @@ public class RedisServiceImpl implements IRedisService {
             return jedis.srem(key, values) != 0;
         } catch (Exception e) {
             LOGGER.error("redis get value is failure,key:{}", key);
-            e.printStackTrace();
         }
         return false;
     }
@@ -102,7 +98,6 @@ public class RedisServiceImpl implements IRedisService {
             return jedis.smembers(key);
         } catch (Exception e) {
             LOGGER.error("redis get value is failure,key:{}", key);
-            e.printStackTrace();
         }
         return Collections.emptySet();
     }

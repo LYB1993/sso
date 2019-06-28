@@ -63,9 +63,6 @@ public class SsoIntercept extends HandlerInterceptorAdapter {
             response.sendRedirect(redirectUrl);
         } catch (IOException e) {
             LOGGER.error("page jump is failure,Exception:{}", e.getMessage());
-            if (LOGGER.isDebugEnabled()) {
-                e.printStackTrace();
-            }
         }
         return false;
     }

@@ -45,10 +45,12 @@ public class InterceptConfig implements WebMvcConfigurer {
 
     static {
         DEFAULT_EXCLUDE_PATH.add("/js/**");
+        DEFAULT_EXCLUDE_PATH.add("/**/*.ico");
         DEFAULT_EXCLUDE_PATH.add("/login");
         DEFAULT_EXCLUDE_PATH.add("/login.html");
         DEFAULT_EXCLUDE_PATH.add("/error");
         DEFAULT_EXCLUDE_PATH.add("/toindex");
+        DEFAULT_EXCLUDE_PATH.add("/api/**");
     }
 
 
