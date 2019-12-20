@@ -28,6 +28,10 @@ public class InstanceInfo {
     private String ipAddr;
     private int port;
     private String homePageUrl;
+    private InstanceStatus status;
+    public InstanceInfo(){
+
+    }
 
     @JsonCreator
     public InstanceInfo(@JsonProperty("instanceId") String instanceId,

@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
 public class SessionHttpClient extends SsoHttpClientDecorator {
     private static Logger log = LoggerFactory.getLogger(SessionHttpClient.class);
 
-    private SsoHttpClient client = new RealeHttpClient();
+    private SsoHttpClient client = new RealHttpClient();
 
     @Override
     <R> HttpResponse<R> execute(RequestExecutor<R> executor) {

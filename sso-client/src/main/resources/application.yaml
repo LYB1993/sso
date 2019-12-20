@@ -1,19 +1,29 @@
-server:
-  port: 8082
 spring:
   output:
     ansi:
       enabled: always
+  main:
+    allow-bean-definition-overriding: true
   mvc:
     view:
       prefix: /
       suffix: .html
-  redis:
-      host: 192.168.20.196
-      database: 0
-  sso:
-    sso-url: http://192.168.80.128:8099/sso
-    exclude-path:
+  datasource:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://127.0.0.1:3306/mybatis?useSSL=false&serverTimezone=UTC
+      username: redfox
+      password: lyb
+#  redis:
+#      host: 192.168.20.196
+#      database: 0
+#  sso:
+#    sso-url: http://192.168.20.196:8099/sso
+#    exclude-path:
+  profiles:
+    active: dev
+artery:
+  login:
+    ssoServer: http://192.168.12.23/ssoserver
 #logging:
 #  level:
 #    com.oliver: debug

@@ -1,5 +1,6 @@
 package com.oliver.test;
 
+import com.oliver.appinfo.InstanceInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,7 +16,8 @@ public abstract class SsoHttpClientDecorator implements SsoHttpClient {
 
     public enum Type {
         register,
-        cancel
+        cancel,
+        sendHeartBeat
     }
 
     public interface RequestExecutor<R> {
@@ -54,6 +56,21 @@ public abstract class SsoHttpClientDecorator implements SsoHttpClient {
             @Override
             public Type getType() {
                 return Type.cancel;
+            }
+        });
+    }
+
+    @Override
+    public HttpResponse<Void> sendHeartBeat(String id, InstanceInfo info, InstanceInfo.InstanceStatus status) {
+        return execute(new RequestExecutor<Void>() {
+            @Override
+            public HttpResponse<Void> execute(SsoHttpClient client) {
+                return client.sendHeartBeat(id, info, status);
+            }
+
+            @Override
+            public Type getType() {
+                return Type.sendHeartBeat;
             }
         });
     }

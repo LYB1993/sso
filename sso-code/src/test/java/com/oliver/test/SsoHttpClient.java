@@ -1,5 +1,6 @@
 package com.oliver.test;
 
+import com.oliver.appinfo.InstanceInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,4 +16,6 @@ public interface SsoHttpClient {
     HttpResponse<Void> register(String appName);
 
     HttpResponse<Void> cancel(String id);
+
+    HttpResponse<Void> sendHeartBeat(String id, InstanceInfo info, InstanceInfo.InstanceStatus status);
 }
